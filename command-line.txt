@@ -1,0 +1,17 @@
+--para o teste unitario
+./mvnw clean test
+
+
+-- teste de Integracao e unitario
+./mvnw clean verify
+
+
+--teste de integração sem o unitario
+./mvnw clean verify -Dsurefire.skip=true
+
+
+--param gerar o report do jacoco
+./mvnw clean test jacoco:report
+
+--para rodar o test mutante
+./mvnw test-compile org.pitest:pitest-maven:mutationCoverage
